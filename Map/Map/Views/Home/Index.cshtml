@@ -441,6 +441,43 @@
         )
         wow.init();
     </script>
+    <script type="text/javascript">
+    $(function () {
+        //link to forgetpwd page
+        $('#pwd').click(function () {
+            window.location.href = "/home/forgetpwd";
+        });
+
+        $('#newaccount').click(function () {
+            window.location.href = "/home/creataccount";
+        });
+
+        //submit userinfo
+        $('#userinfo').submit(function () {
+            var userinfo = {
+                username: $('#username').val(),
+                password: $('#password').val()
+            };
+
+            $.ajax({
+                type: 'post',
+                url: '/home/checkinfo',
+                data: userinfo,
+                success: function (data) {
+                    alert(data);
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        });
+
+
+
+    });
+
+
+    </script>
 
 </body>
 </html>
