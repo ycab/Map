@@ -128,9 +128,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Dao\IProductDao.cs" />
-    <Compile Include="Models\Dao\ProductDao.cs" />
-    <Compile Include="Models\Domain\Product.cs" />
+    <Compile Include="Models\Dao\IPersonDao.cs" />
+    <Compile Include="Models\Dao\PersonDao.cs" />
+    <Compile Include="Models\Domain\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,7 +162,7 @@
     </Content>
     <Content Include="img\search-icon.jpg" />
     <Content Include="img\triangle.png" />
-    <EmbeddedResource Include="Models\Domain\Product.hbm.xml" />
+    <EmbeddedResource Include="Models\Domain\Person.hbm.xml" />
     <Content Include="Scripts\bootstrap.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

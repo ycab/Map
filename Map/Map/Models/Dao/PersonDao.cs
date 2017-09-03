@@ -8,17 +8,17 @@ using NHibernate.Linq;
 
 namespace DAO
 {
-    public class ProductDao:IProductDao
+    public class PersonDao:IPersonDao
     {
         private ISessionFactory sessionFactory;
 
-        public ProductDao()
+        public PersonDao()
         {
             var cfg = new NHibernate.Cfg.Configuration().Configure(System.AppDomain.CurrentDomain.BaseDirectory + "hibernate.cfg.xml");
             sessionFactory = cfg.BuildSessionFactory();
         }
 
-        public object Save(Domain.Product entity)
+        public object Save(Domain.Person entity)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
@@ -28,7 +28,7 @@ namespace DAO
             }
         }
 
-        public void Update(Domain.Product entity)
+        public void Update(Domain.Person entity)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
@@ -37,7 +37,7 @@ namespace DAO
             }
         }
 
-        public void Delete(Domain.Product entity)
+        public void Delete(Domain.Person entity)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
@@ -46,27 +46,27 @@ namespace DAO
             }
         }
 
-        public Domain.Product Get(object id)
+        public Domain.Person Get(object id)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                return session.Get<Domain.Product>(id);
+                return session.Get<Domain.Person>(id);
             }
         }
 
-        public Domain.Product Load(object id)
+        public Domain.Person Load(object id)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                return session.Load<Domain.Product>(id);
+                return session.Load<Domain.Person>(id);
             }
         }
 
-        public IList<Domain.Product> LoadAll()
+        public IList<Domain.Person> LoadAll()
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                return session.Query<Domain.Product>().ToList();
+                return session.Query<Domain.Person>().ToList();
             }
         }
     }

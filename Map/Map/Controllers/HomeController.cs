@@ -36,12 +36,12 @@ namespace Map.Controllers
 
             return View();
         }
-        private IProductDao productDao;
+        private IPersonDao productDao;
 
         [SetUp]
         public void Init()
         {
-            productDao = new ProductDao();
+            productDao = new PersonDao();
         }
         public class NHiberTest
         {
@@ -56,15 +56,15 @@ namespace Map.Controllers
         [Test]
         public void SaveTest()
         {
-            var product = new Domain.Product
+            var product = new Domain.Person
             {
-                ID = Guid.NewGuid(),
-                BuyPrice = 10M,
-                Code = "ABC123",
-                Name = "电脑",
-                QuantityPerUnit = "20x1",
-                SellPrice = 11M,
-                Unit = "台"
+                ID = "second",
+               
+                Username = "yupeng",
+                Pwd = "ABC123",
+                Email = "电脑",
+                Gender = 0,
+                Authority = 3,
             };
 
            // var obj = new ProductDao().Save(product);
